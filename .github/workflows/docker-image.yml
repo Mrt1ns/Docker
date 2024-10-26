@@ -21,6 +21,10 @@ jobs:
           run: |
             ls -la 
             docker build . -f Dockerfile -t consultoria-devops:v1
+        - name: Tag Build Docker Image
+          id: tag-docker-image
+          run: |
+            docker tag consultoria-devops ${{secrets.DOCKERHUB_USERNAME}}/estrelasfc:v1
         - name: push the docker image
           id: push-docker-image
-          run: docker push ${{secrets.DOCKERHUB_USERNAME}}/consultoria-devops:v1
+          run: docker push ${{secrets.DOCKERHUB_USERNAME}}/estrelasfc:v1
