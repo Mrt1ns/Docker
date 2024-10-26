@@ -20,7 +20,7 @@ jobs:
           id: build-docker-image
           run: |
             ls -la 
-            docker build . -f Dockerfile -t consultoria-devops:v1
+            docker build . -t consultoria-devops
         - name: Tag Build Docker Image
           id: tag-docker-image
           run: |
