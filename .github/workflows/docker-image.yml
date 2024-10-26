@@ -20,7 +20,7 @@ jobs:
           id: build-docker-image
           run: |
             ls -la 
-            docker build . -f Dockerfile -t consultoria-devops:v1
+            docker build My-nginx-app\. -f Dockerfile -t consultoria-devops:v1
         - name: push the docker image
           id: push-docker-image
           run: docker push ${{secrets.DOCKERHUB_USERNAME}}/consultoria-devops:v1
